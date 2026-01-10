@@ -380,6 +380,50 @@ table {
     border-radius: 10px;
     box-shadow: 0 6px 14px rgba(30,90,142,0.06);
 }
+.error-message{ display:block; color:#b00020; margin-top:6px; font-size:0.9em; }
+.input-error{ border-color:#b00020 !important; box-shadow: 0 0 0 3px rgba(176,0,32,0.06); }
+/* ícone de aviso junto ao campo */
+.error-icon{ display:none; margin-left:8px; font-size:1em; vertical-align:middle; }
+input.input-error + .error-icon{ display:inline-block; color:#b00020; }
+input.input-error + .error-icon{ position: relative; cursor: help; }
+
+/* Tooltip customizado */
+input.input-error + .error-icon::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.85em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .12s ease;
+    z-index: 20;
+}
+input.input-error + .error-icon::before{
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.85) transparent transparent transparent;
+    opacity: 0;
+    transition: opacity .12s ease;
+    z-index: 20;
+}
+input.input-error + .error-icon:hover::after,
+input.input-error + .error-icon:hover::before,
+input.input-error + .error-icon:focus::after,
+input.input-error + .error-icon:focus::before{
+    opacity: 1;
+}
 .info-card { margin-bottom: 10px; }
 .info-card strong { display:block; color:#2d7d5f; margin-bottom:4px; }
 .map { margin-top: 8px; border-radius: 8px; overflow: hidden; }
@@ -397,6 +441,32 @@ table {
 }
 .footer-brand h3, .footer-links p, .footer-rights p { margin: 6px 0; }
 .footer-links a { color: rgba(255,255,255,0.95); text-decoration: none; }
+
+/* Responsivo: colapsar layout fixo em telas menores */
+@media (max-width: 900px) {
+    .wrapper {
+        width: 100%;
+        flex-direction: column;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+    .menu {
+        width: 100%;
+        border-radius: 0;
+        order: 1;
+        display: flex;
+        align-items: center;
+        padding: 12px;
+    }
+    .main {
+        width: 100%;
+        order: 2;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+}
 
 /* Responsivo: empilha no mobile */
 @media (max-width: 900px) {

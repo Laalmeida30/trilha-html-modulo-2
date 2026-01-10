@@ -1,3 +1,22 @@
+# Clínica Veterinária São Francisco
+
+> Projeto educativo — site estático (HTML/CSS) da Trilha HTML - Módulo 2.
+
+Abra `trilha-html-modulo-2/paginaprincipal.html` no VS Code e use a extensão Live Server para visualizar a página localmente.
+
+Extensões úteis: `Live Server`, `Prettier`, `ESLint`, `GitLens`, `Path Intellisense`.
+
+Para formatação automática, a configuração do workspace já define Prettier como formatador e `formatOnSave`.
+
+## Como visualizar
+
+1. Instale a extensão Live Server no VS Code.
+2. Abra `trilha-html-modulo-2/paginaprincipal.html` e clique em "Go Live" (Live Server).
+
+## Notas rápidas
+
+- Validação simples do formulário de contato foi adicionada em `contato/index.html`.
+- O `base.css` recebeu ajustes de responsividade para telas menores (<= 900px).
 # Trilha HTML - Dio.me
 ## Módulo 02 - HTML I - Conceitos Básicos
 
