@@ -17,6 +17,25 @@ Para formatação automática, a configuração do workspace já define Prettier
 
 - Validação simples do formulário de contato foi adicionada em `contato/index.html`.
 - O `base.css` recebeu ajustes de responsividade para telas menores (<= 900px).
+ 
+## Melhorias adicionadas
+
+- Meta tags (`description`, `canonical`) e Open Graph em todas as páginas.
+- Link "Pular para o conteúdo" (`.skip-link`) e roles ARIA (`role="navigation"`, `role="main"`).
+- `srcset` e `sizes` nas imagens de cabeçalho para carregamento responsivo.
+- Content Security Policy (meta) básica adicionada nas páginas.
+- Servidor stub em `/server` para receber `POST /contact` (exemplo com Express).
+- Workflow GitHub Actions em `.github/workflows/ci.yml` verificando Prettier e HTMLHint.
+
+## Rodando o servidor stub
+
+```bash
+cd server
+npm install
+npm start
+```
+
+O servidor rodará em `http://localhost:3000` e aceitará `POST /contact`.
 # Trilha HTML - Dio.me
 ## Módulo 02 - HTML I - Conceitos Básicos
 
